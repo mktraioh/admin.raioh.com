@@ -1,7 +1,7 @@
 export const PROJECT_NAME = 'RAIOH';
 export const BASE_URL =
-  process.env.REACT_APP_BASE_URL || 'https://api.foodyman.org';
-export const WEBSITE_URL = 'https://foodyman.org';
+  process.env.REACT_APP_BASE_URL || 'https://api.raioh.com';
+export const WEBSITE_URL = 'https://raioh.com/';
 export const api_url = BASE_URL + '/api/v1/';
 export const api_url_admin = BASE_URL + '/api/v1/dashboard/admin/';
 export const api_url_admin_dashboard = BASE_URL + '/api/v1/dashboard/';
