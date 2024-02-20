@@ -25,33 +25,6 @@ import Recaptcha from 'components/recaptcha';
 import { setMenu } from 'redux/slices/menu';
 const { Title } = Typography;
 
-const credentials = [
-  {
-    login: 'admin@githubit.com',
-    password: 'githubit',
-  },
-  {
-    login: 'manager@githubit.com',
-    password: 'manager',
-  },
-  {
-    login: 'sellers@githubit.com',
-    password: 'seller',
-  },
-  {
-    login: 'moderator@githubit.com',
-    password: 'moderator',
-  },
-  {
-    login: 'delivery@githubit.com',
-    password: 'delivery',
-  },
-  // {
-  //   login: 'temp@gmail.com',
-  //   password: '12345678',
-  // },
-];
-
 const Login = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
