@@ -21,8 +21,36 @@ import {
 } from '../../redux/slices/globalSettings';
 import { useTranslation } from 'react-i18next';
 import { PROJECT_NAME } from '../../configs/app-global';
+import Recaptcha from 'components/recaptcha';
 import { setMenu } from 'redux/slices/menu';
 const { Title } = Typography;
+
+const credentials = [
+  {
+    login: 'admin@githubit.com',
+    password: 'githubit',
+  },
+  {
+    login: 'manager@githubit.com',
+    password: 'manager',
+  },
+  {
+    login: 'sellers@githubit.com',
+    password: 'seller',
+  },
+  {
+    login: 'moderator@githubit.com',
+    password: 'moderator',
+  },
+  {
+    login: 'delivery@githubit.com',
+    password: 'delivery',
+  },
+  // {
+  //   login: 'temp@gmail.com',
+  //   password: '12345678',
+  // },
+];
 
 const Login = () => {
   const { t } = useTranslation();
@@ -30,6 +58,9 @@ const Login = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const { settings } = useSelector((state) => state.globalSettings);
+  const [recaptcha, setRecaptcha] = useState(null);
+  const handleRecaptchaChange = (value) => {
+    setRecaptcha(value);
   };
   const isDemo = Boolean(Number(settings?.is_demo));
 
@@ -147,7 +178,16 @@ const Login = () => {
                           placeholder='Senha'
                         />
                       </Form.Item>
-                      
+                      <Recaptcha onChange={handleRecaptchaChange} />
+                      <Form.Item className='login-input mt-4'>
+                        <Button
+                          type='primary'
+                          htmlType='submit'
+                          className='login-form-button'
+                          loading={loading}
+                          //disabled={!Boolean(recaptcha)}
+                          disabled={false}
+                        >
                           {t('Login')}
                         </Button>
                       </Form.Item>
