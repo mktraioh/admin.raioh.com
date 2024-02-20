@@ -144,7 +144,7 @@ const Login = () => {
                           prefix={
                             <LockOutlined className='site-form-item-icon' />
                           }
-                          placeholder='Password'
+                          placeholder='Senha'
                         />
                       </Form.Item>
                       
