@@ -1,4 +1,4 @@
-export const PROJECT_NAME = 'Foodyman marketplace';
+export const PROJECT_NAME = 'RAIOH';
 export const BASE_URL =
   process.env.REACT_APP_BASE_URL || 'https://api.foodyman.org';
 export const WEBSITE_URL = 'https://foodyman.org';
@@ -24,7 +24,7 @@ export const MESSAGING_SENDER_ID = '723986947199';
 export const APP_ID = '1:723986947199:web:5b3b23e1e9f97083f5334a';
 export const MEASUREMENT_ID = 'G-09DRT9D4L0';
 
-export const RECAPTCHASITEKEY = '6LesdI0mAAAAAOsL4S5ZsqGmaW5VTw6z8bc7_maZ';
+export const RECAPTCHASITEKEY = '6LdZA3kpAAAAAG8UY9X4-9HPDkU5wQhc3eXDm4eX';
 
 export const DEMO_SELLER = 334; // seller_id
 export const DEMO_SELLER_UUID = '3566bdf6-3a09-4488-8269-70a19f871bd0'; // seller_id
