@@ -21,7 +21,6 @@ import {
 } from '../../redux/slices/globalSettings';
 import { useTranslation } from 'react-i18next';
 import { PROJECT_NAME } from '../../configs/app-global';
-import Recaptcha from 'components/recaptcha';
 import { setMenu } from 'redux/slices/menu';
 const { Title } = Typography;
 
@@ -31,9 +30,6 @@ const Login = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const { settings } = useSelector((state) => state.globalSettings);
-  const [recaptcha, setRecaptcha] = useState(null);
-  const handleRecaptchaChange = (value) => {
-    setRecaptcha(value);
   };
   const isDemo = Boolean(Number(settings?.is_demo));
 
