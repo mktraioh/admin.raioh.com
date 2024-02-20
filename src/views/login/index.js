@@ -175,10 +175,10 @@ const Login = () => {
                           prefix={
                             <LockOutlined className='site-form-item-icon' />
                           }
-                          placeholder='Senha'
+                          placeholder='Password'
                         />
                       </Form.Item>
-                      <Recaptcha onChange={handleRecaptchaChange} />
+                      {/* <Recaptcha onChange={handleRecaptchaChange} /> */}
                       <Form.Item className='login-input mt-4'>
                         <Button
                           type='primary'
