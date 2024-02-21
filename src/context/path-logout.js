@@ -10,12 +10,12 @@ export const PathLogout = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // installationService
-    //   .checkInitFile()
-    //   .then(() => console.log('file found'))
-    //   .catch(() => {
-    //     navigate('/welcome');
-    //   });
+    installationService
+      .checkInitFile()
+      .then(() => console.log('file found'))
+      .catch(() => {
+        navigate('/welcome');
+      });
   }, []);
 
   if (user) {
