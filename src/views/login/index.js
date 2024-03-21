@@ -133,6 +133,10 @@ const Login = () => {
                 <div className='app-brand text-center'>
                   <Title className='brand-logo'>
                     {settings.title || PROJECT_NAME}
+                    {/* <a style={{ display: 'block' }} href="/">
+                      <img src="https://raioh.com/logos/raioh.light.png" width="129" height="60" alt="Brand logo dark" />
+                    </a> */}
+
                   </Title>
                 </div>
                 <Row justify='center'>
