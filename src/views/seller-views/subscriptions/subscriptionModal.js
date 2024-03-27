@@ -12,7 +12,7 @@ import { FaPaypal } from 'react-icons/fa';
 import { SiStripe, SiRazorpay } from 'react-icons/si';
 import { AiOutlineWallet } from 'react-icons/ai';
 import restPaymentService from '../../../services/rest/payment';
-const acceptedPayments = ['wallet'];
+// const acceptedPayments = ['wallet'];
 
 export default function SellerSubscriptionModal({ modal, handleCancel }) {
   const { t } = useTranslation();
@@ -95,10 +95,10 @@ export default function SellerSubscriptionModal({ modal, handleCancel }) {
   }
 
   const selectPayment = (type) => {
-    if (!acceptedPayments.includes(type.label)) {
-      toast.warning(t('cannot.work.demo'));
-      return;
-    }
+    // if (!acceptedPayments.includes(type.label)) {
+    //   toast.warning(t('cannot.work.demo'));
+    //   return;
+    // }
     setPaymentType(type);
   };
 
