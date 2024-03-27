@@ -38,7 +38,7 @@ export default function SubscriptionForm({ form, onFinish }) {
           </Form.Item>
         </Col>
 
-        <Col span={12}>
+        <Col span={12} style={{display: "none"}}>
           <Form.Item
             label={t('product_limit')}
             name='product_limit'
@@ -49,11 +49,11 @@ export default function SubscriptionForm({ form, onFinish }) {
               },
             ]}
           >
-            <InputNumber min={0} className='w-100' />
+            <InputNumber min={9999999} className='w-100' />
           </Form.Item>
         </Col>
 
-        <Col span={12}>
+        <Col span={12} style={{display: "none"}}>
           <Form.Item
             label={t('order_limit')}
             name='order_limit'
@@ -64,7 +64,7 @@ export default function SubscriptionForm({ form, onFinish }) {
               },
             ]}
           >
-            <InputNumber min={0} className='w-100' />
+            <InputNumber min={9999999} className='w-100' />
           </Form.Item>
         </Col>
 
@@ -82,7 +82,22 @@ export default function SubscriptionForm({ form, onFinish }) {
             <InputNumber min={0} className='w-100' />
           </Form.Item>
         </Col>
-        <Col span={12} />
+
+
+        <Col span={12}>
+          <Form.Item
+            label={t('commission')}
+            name='commission'
+            rules={[
+              {
+                required: true,
+                message: t('required'),
+              },
+            ]}
+          >
+            <Input defaultValue={0} min={0} className='w-100' />
+          </Form.Item>
+        </Col>
 
         <Col span={12}>
           <Form.Item
