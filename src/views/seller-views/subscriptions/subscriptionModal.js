@@ -80,18 +80,41 @@ export default function SellerSubscriptionModal({ modal, handleCancel }) {
       .error(() => setLoadingBtn(false));
   };
 
-  function transactionCreate(id) {
+  function transactionCreate(idInside) {
     const payload = {
       payment_sys_id: paymentType.value,
+      subscription_id: modal.id,
     };
     subscriptionService
-      .transactionCreate(id, payload)
-      .then(() => {
-        handleCancel();
-        toast.success(t('successfully.purchased'));
-        dispatch(fetchMyShop());
+      .transactionCreateMercadoPago(payload)
+      // .then(() => {
+      //   handleCancel();
+      //   toast.success(t('successfully.purchased'));
+      //   dispatch(fetchMyShop());
+      // })
+      .then(async (response) => {
+        // Aguarda a resposta assíncrona
+        const responseData = await response;
+        // console.log(responseData.data.data.url, 'test');
+        // Verifica se a resposta foi bem-sucedida e se há uma URL retornada
+        if (responseData && responseData.data && responseData.data.data.url) {
+        //  Redireciona para a URL retornada
+        window.location.href = await responseData.data.data.url;
+        } else {
+          // Caso contrário, trata o erro ou faz qualquer outra coisa conforme necessário
+          console.error('URL de redirecionamento ausente na resposta.');
+          // Você pode exibir uma mensagem de erro ou realizar outras ações aqui
+          handleCancel();
+          toast.success(t('successfully.purchased'));
+          dispatch(fetchMyShop());
+        }
       })
-      .finally(() => setLoadingBtn(false));
+    .catch((error) => {
+      // Bloco catch para lidar com erros
+      console.error('Erro:', error);
+      // Aqui você pode lidar com o erro, exibindo mensagens de erro, etc.
+    })
+    .finally(() => setLoadingBtn(false));
   }
 
   const selectPayment = (type) => {
